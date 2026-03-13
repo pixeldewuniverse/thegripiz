@@ -1,0 +1,1 @@
+Replace hero-placeholder.mp4 with a cinematic fire/grill video for production.
