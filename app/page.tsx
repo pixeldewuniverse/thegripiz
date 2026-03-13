@@ -8,12 +8,17 @@ import MenuList from '@/components/MenuList';
 import Navbar from '@/components/Navbar';
 import SignatureMenu from '@/components/SignatureMenu';
 import Experience from '@/components/Experience';
+import About from '@/components/About';
+import WhatsAppButton from '@/components/WhatsAppButton';
 
 export default function Home() {
   return (
     <main className="bg-ember">
       <Navbar />
       <Hero />
+      <FadeInSection>
+        <About />
+      </FadeInSection>
       <FadeInSection id="menu">
         <SignatureMenu />
       </FadeInSection>
@@ -33,6 +38,7 @@ export default function Home() {
         <Location />
       </FadeInSection>
       <Footer />
+      <WhatsAppButton />
     </main>
   );
 }
