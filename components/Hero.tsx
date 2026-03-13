@@ -11,7 +11,7 @@ export default function Hero() {
         className="absolute inset-0 h-full w-full object-cover"
         aria-hidden="true"
       >
-        <source src="public/wood fire.mp4" type="video/mp4" />
+        <source src="/videos/wood fire.mp4" type="video/mp4" />
       </video>
 
       <div className="absolute inset-0 bg-black/60" />
