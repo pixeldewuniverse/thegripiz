@@ -16,7 +16,7 @@ export default function Location() {
         <p className="mt-6 font-subheading text-xl uppercase text-burntOrange">Opening Hours</p>
         <p>10:00 – 22:00</p>
         <div className="mt-8 flex flex-wrap gap-4">
-          <a className="btn-primary" href="https://maps.google.com/?q=Badung,+Bali" target="_blank">
+          <a className="btn-primary" href="https://maps.app.goo.gl/VQw766y1SUEVrwYh6" target="_blank">
             Google Maps
           </a>
           <a className="btn-secondary" href="https://wa.me/6281234567890" target="_blank">
