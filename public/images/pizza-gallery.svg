@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#111111" />
+      <stop offset="55%" stop-color="#1E1E1E" />
+      <stop offset="100%" stop-color="#C85048" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <circle cx="940" cy="170" r="220" fill="#FF6A2B" fill-opacity="0.22"/>
+  <circle cx="230" cy="680" r="250" fill="#C85048" fill-opacity="0.2"/>
+  <text x="50%" y="50%" fill="#F5F5F5" font-size="64" text-anchor="middle" font-family="Arial, sans-serif" dy=".3em">Pizza Gallery Placeholder</text>
+</svg>

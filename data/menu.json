@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Smoked Beef Brisket",
+    "category": "Smoked Grill",
+    "description": "12-hour smoked brisket with house BBQ glaze and pickled onions.",
+    "price": "IDR 145K"
+  },
+  {
+    "name": "Firewood Pepperoni Pizza",
+    "category": "Pizza",
+    "description": "Italian dough, premium pepperoni, mozzarella, and smoky chili oil.",
+    "price": "IDR 118K"
+  },
+  {
+    "name": "Pulled Beef Sandwich",
+    "category": "Sandwich",
+    "description": "Smoked pulled beef, cheddar, slaw, and toasted brioche bun.",
+    "price": "IDR 89K"
+  },
+  {
+    "name": "Creamy Smoked Chicken Pasta",
+    "category": "Pasta",
+    "description": "Al dente pasta with smoked chicken, parmesan cream, and herbs.",
+    "price": "IDR 96K"
+  },
+  {
+    "name": "Charcoal Lemon Tea",
+    "category": "Drinks",
+    "description": "Refreshing iced lemon tea with subtle charcoal infusion.",
+    "price": "IDR 38K"
+  }
+]
