@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-charcoal text-whiteSmoke font-body;
+  background-image: linear-gradient(180deg, #111111 0%, #1e1e1e 100%);
+}
+
+.smoke-overlay {
+  background: radial-gradient(circle at 25% 20%, rgba(255, 106, 43, 0.18), transparent 35%),
+    radial-gradient(circle at 70% 15%, rgba(200, 80, 72, 0.2), transparent 40%),
+    linear-gradient(to bottom, rgba(17, 17, 17, 0.45), rgba(17, 17, 17, 0.88));
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-fireRed px-6 py-3 font-medium text-whiteSmoke transition duration-300 hover:bg-burntOrange hover:shadow-fire;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-fireRed px-6 py-3 font-medium text-whiteSmoke transition duration-300 hover:bg-fireRed/20 hover:shadow-fire;
+  }
+
+  .card-fire {
+    @apply rounded-2xl border border-steel bg-smoke/90 p-5 shadow-lg transition duration-300 hover:-translate-y-1 hover:shadow-fire;
+  }
+}
