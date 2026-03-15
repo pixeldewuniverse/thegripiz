@@ -2,31 +2,31 @@ import Image from 'next/image';
 import { readdir } from 'node:fs/promises';
 import path from 'node:path';
 
-type GalleryItem = {
+type GalleryImage = {
   src: string;
-  label: string;
+  alt: string;
 };
 
-const MENU_IMAGES_DIR = path.join(process.cwd(), 'public', 'images', 'menu');
-const IMAGE_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif']);
+const MENU_ROOT = path.join(process.cwd(), 'public', 'images', 'menu');
+const VALID_EXTENSIONS = new Set(['.jpg', '.jpeg', '.png', '.webp', '.avif']);
 
-function toLabel(filePath: string): string {
+function humanizeName(fileName: string) {
   return path
-    .basename(filePath, path.extname(filePath))
+    .basename(fileName, path.extname(fileName))
     .replace(/[-_]+/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
 
-async function getMenuGalleryImages(dir: string, baseDir = dir): Promise<GalleryItem[]> {
+async function collectMenuImages(dir: string, baseDir = dir): Promise<GalleryImage[]> {
   const entries = await readdir(dir, { withFileTypes: true });
 
-  const nested = await Promise.all(
+  const chunks = await Promise.all(
     entries.map(async (entry) => {
       const fullPath = path.join(dir, entry.name);
 
       if (entry.isDirectory()) {
-        return getMenuGalleryImages(fullPath, baseDir);
+        return collectMenuImages(fullPath, baseDir);
       }
 
       if (!entry.isFile()) {
@@ -34,52 +34,47 @@ async function getMenuGalleryImages(dir: string, baseDir = dir): Promise<Gallery
       }
 
       const extension = path.extname(entry.name).toLowerCase();
-      if (!IMAGE_EXTENSIONS.has(extension)) {
+      if (!VALID_EXTENSIONS.has(extension)) {
         return [];
       }
 
       const relativePath = path.relative(baseDir, fullPath).split(path.sep).join('/');
+
       return [
         {
           src: encodeURI(`/images/menu/${relativePath}`),
-          label: toLabel(entry.name)
+          alt: humanizeName(entry.name)
         }
       ];
     })
   );
 
-  return nested.flat().sort((a, b) => a.src.localeCompare(b.src));
+  return chunks.flat().sort((a, b) => a.src.localeCompare(b.src));
 }
 
 export default async function FoodGallery() {
-  const galleryImages = await getMenuGalleryImages(MENU_IMAGES_DIR);
+  const images = await collectMenuImages(MENU_ROOT);
 
   return (
     <section id="gallery" className="bg-[#111111] py-20">
       <div className="mx-auto max-w-7xl px-6">
         <h2 className="font-heading text-5xl uppercase text-whiteSmoke md:text-6xl">Food Gallery</h2>
         <p className="mt-2 font-subheading text-xl text-whiteSmoke/75">
-          Every fire-crafted menu visual, curated automatically from our smokehouse kitchen archive.
+          Smoke-kissed moments from every menu category, curated automatically from our kitchen archive.
         </p>
 
-        <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-3 xl:grid-cols-4">
-          {galleryImages.map((img) => (
-            <article
-              key={img.src}
-              className="group relative overflow-hidden rounded-2xl border border-burntOrange/20 bg-[#1E1E1E] shadow-[0_0_0_1px_rgba(255,106,43,0.08),0_18px_38px_rgba(0,0,0,0.5)]"
-            >
-              <div className="relative h-72">
+        <div className="mt-10 columns-2 gap-6 md:columns-3 xl:columns-4">
+          {images.map((image) => (
+            <article key={image.src} className="group mb-6 break-inside-avoid overflow-hidden rounded-2xl bg-[#1E1E1E]">
+              <div className="relative min-h-52 overflow-hidden">
                 <Image
-                  src={img.src}
-                  alt={img.label}
-                  fill
-                  className="object-cover transition duration-500 group-hover:scale-110"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                  src={image.src}
+                  alt={image.alt}
+                  width={640}
+                  height={840}
+                  className="h-auto w-full object-cover transition duration-500 group-hover:scale-105"
                 />
-                <div className="absolute inset-0 bg-black/10 transition duration-300 group-hover:bg-black/45" />
-                <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4">
-                  <p className="font-subheading text-lg text-whiteSmoke">{img.label}</p>
-                </div>
+                <div className="absolute inset-0 bg-black/0 transition duration-300 group-hover:bg-black/35" />
               </div>
             </article>
           ))}
