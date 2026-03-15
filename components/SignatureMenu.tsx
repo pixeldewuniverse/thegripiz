@@ -10,12 +10,12 @@ const signatureItems: SignatureItem[] = [
   {
     name: 'Sun Pizza',
     description: 'Wood-fired pizza with bright tomato sauce, creamy mozzarella, and ember-charred crust.',
-    image: '/images/menu/Pizza/Sun Pizza.jpg'
+    image: '/images/menu/Pizza/Sun Gripiz.jpg'
   },
   {
     name: 'Texas Smoked Grilled Platter',
     description: 'Smokehouse-style grilled meats with bold BBQ glaze, pickles, and rustic fire-roasted sides.',
-    image: '/images/menu/Steak/Texas.jpg'
+    image: '/images/menu/Steak/Texas Smoked Grilled Platter.jpg'
   },
   {
     name: 'Nasi Goreng Seafood Kecombrang',
