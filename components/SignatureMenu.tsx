@@ -10,22 +10,22 @@ const signatureItems: SignatureItem[] = [
   {
     name: 'Sun Pizza',
     description: 'Wood-fired pizza with bright tomato sauce, creamy mozzarella, and ember-charred crust.',
-    image: '/images/menu/Pizza/sun-pizza.jpg'
+    image: '/images/menu/pizza/sun-pizza.jpg'
   },
   {
     name: 'Texas Smoked Grilled Platter',
     description: 'Smokehouse-style grilled meats with bold BBQ glaze, pickles, and rustic fire-roasted sides.',
-    image: '/images/menu/Steak/texas.jpg'
+    image: '/images/menu/steak/texas.jpg'
   },
   {
     name: 'Nasi Goreng Seafood Kecombrang',
     description: 'Wok-seared Indonesian fried rice with seafood, torch ginger aroma, and smoky chili accents.',
-    image: '/images/menu/Nasi/nasi-goreng-seafood-kecombrang.jpg'
+    image: '/images/menu/nasi/nasi-goreng-seafood-kecombrang.jpg'
   },
   {
     name: 'Nasi Padang Smoked Chicken',
     description: 'Fragrant rice served with tender smoked chicken and rich Indonesian spices layered with fire.',
-    image: '/images/menu/Nasi/nasi-padang-smoked-chicken.jpg'
+    image: '/images/menu/nasi/nasi-padang-smoked-chicken.jpg'
   }
 ];
 
