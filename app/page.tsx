@@ -4,7 +4,6 @@ import FromFire from '@/components/FromFire';
 import FoodGallery from '@/components/FoodGallery';
 import Hero from '@/components/Hero';
 import Location from '@/components/Location';
-import MenuSection from '@/components/MenuSection';
 import Navbar from '@/components/Navbar';
 import SignatureMenu from '@/components/SignatureMenu';
 import Experience from '@/components/Experience';
@@ -19,17 +18,14 @@ export default function Home() {
       <FadeInSection>
         <About />
       </FadeInSection>
+      <FadeInSection>
+        <FoodGallery />
+      </FadeInSection>
       <FadeInSection id="menu">
         <SignatureMenu />
       </FadeInSection>
       <FadeInSection>
         <FoodGallery />
-      </FadeInSection>
-      <FadeInSection>
-        <FromFire />
-      </FadeInSection>
-      <FadeInSection>
-        <MenuSection />
       </FadeInSection>
       <FadeInSection>
         <Experience />
