@@ -23,13 +23,13 @@ export default function Home() {
         <SignatureMenu />
       </FadeInSection>
       <FadeInSection>
+        <FoodGallery />
+      </FadeInSection>
+      <FadeInSection>
         <FromFire />
       </FadeInSection>
       <FadeInSection>
         <MenuSection />
-      </FadeInSection>
-      <FadeInSection>
-        <FoodGallery />
       </FadeInSection>
       <FadeInSection>
         <Experience />

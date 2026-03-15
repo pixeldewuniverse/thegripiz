@@ -41,7 +41,7 @@ async function getMenuGalleryImages(dir: string, baseDir = dir): Promise<Gallery
       const relativePath = path.relative(baseDir, fullPath).split(path.sep).join('/');
       return [
         {
-          src: `/images/menu/${relativePath}`,
+          src: encodeURI(`/images/menu/${relativePath}`),
           label: toLabel(entry.name)
         }
       ];
@@ -62,7 +62,7 @@ export default async function FoodGallery() {
           Every fire-crafted menu visual, curated automatically from our smokehouse kitchen archive.
         </p>
 
-        <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2 xl:grid-cols-4">
+        <div className="mt-10 grid grid-cols-2 gap-6 md:grid-cols-3 xl:grid-cols-4">
           {galleryImages.map((img) => (
             <article
               key={img.src}
