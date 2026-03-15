@@ -1,7 +1,6 @@
 import FadeInSection from '@/components/FadeInSection';
 import Footer from '@/components/Footer';
 import FromFire from '@/components/FromFire';
-import FoodGallery from '@/components/FoodGallery';
 import Hero from '@/components/Hero';
 import Location from '@/components/Location';
 import Navbar from '@/components/Navbar';
@@ -23,9 +22,6 @@ export default function Home() {
       </FadeInSection>
       <FadeInSection id="menu">
         <SignatureMenu />
-      </FadeInSection>
-      <FadeInSection>
-        <FoodGallery />
       </FadeInSection>
       <FadeInSection>
         <Experience />
