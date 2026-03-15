@@ -1,10 +1,10 @@
 import FadeInSection from '@/components/FadeInSection';
 import Footer from '@/components/Footer';
 import FromFire from '@/components/FromFire';
-import Gallery from '@/components/Gallery';
+import FoodGallery from '@/components/FoodGallery';
 import Hero from '@/components/Hero';
 import Location from '@/components/Location';
-import MenuList from '@/components/MenuList';
+import MenuSection from '@/components/MenuSection';
 import Navbar from '@/components/Navbar';
 import SignatureMenu from '@/components/SignatureMenu';
 import Experience from '@/components/Experience';
@@ -26,10 +26,10 @@ export default function Home() {
         <FromFire />
       </FadeInSection>
       <FadeInSection>
-        <MenuList />
+        <MenuSection />
       </FadeInSection>
       <FadeInSection>
-        <Gallery />
+        <FoodGallery />
       </FadeInSection>
       <FadeInSection>
         <Experience />
