@@ -1,4 +1,4 @@
-const navItems = ['Home', 'Menu', 'Gallery', 'Location', 'Contact'];
+const navItems = ['Home', 'Menu', 'Location', 'Contact'];
 
 export default function Navbar() {
   return (
