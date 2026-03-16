@@ -14,6 +14,13 @@ type MenuGalleryProps = {
   categoryLabels: Record<string, string>;
 };
 
+const toPublicImagePath = (src: string) => {
+  const withoutDotPrefix = src.replace(/^\.\//, '');
+  const withoutPublicPrefix = withoutDotPrefix.replace(/^\/?public\//, '/');
+
+  return withoutPublicPrefix.startsWith('/') ? withoutPublicPrefix : `/${withoutPublicPrefix}`;
+};
+
 export default function MenuGallery({ categories, images, categoryLabels }: MenuGalleryProps) {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
@@ -70,7 +77,7 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
             className="group mb-4 break-inside-avoid overflow-hidden rounded-2xl shadow-[0_12px_28px_rgba(0,0,0,0.45)]"
           >
             <Image
-              src={image.src}
+              src={toPublicImagePath(image.src)}
               alt="menu item"
               width={600}
               height={600}
