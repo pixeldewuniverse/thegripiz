@@ -25,10 +25,6 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
   useEffect(() => {
-    console.log('Menu images:', images);
-  }, [images]);
-
-  useEffect(() => {
     if (activeCategory !== 'all' && !categories.includes(activeCategory)) {
       setActiveCategory('all');
     }
@@ -82,8 +78,8 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
               width={600}
               height={600}
               loading="lazy"
-              sizes="(max-width:768px)50vw,(max-width:1200px)33vw,25vw"
-              className="w-full h-auto object-cover transition hover:scale-105"
+              sizes="(max-width:768px) 100vw, 33vw"
+              className="h-auto w-full object-cover transition-transform duration-500 hover:scale-105"
             />
           </article>
         ))}
