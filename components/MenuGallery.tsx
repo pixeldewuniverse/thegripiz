@@ -17,12 +17,10 @@ type MenuGalleryProps = {
 export default function MenuGallery({ categories, images, categoryLabels }: MenuGalleryProps) {
   const [activeCategory, setActiveCategory] = useState('all');
 
-  const filteredImages =
+ const filteredImages =
   activeCategory === 'all'
     ? images
     : images.filter((img) => img.category === activeCategory);
-    return images.filter((image) => image.category === activeCategory);
-  }, [activeCategory, images]);
 
   return (
     <div className="mt-14">
