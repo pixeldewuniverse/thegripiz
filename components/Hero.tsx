@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section id="home" className="relative flex h-screen w-full items-center justify-center overflow-hidden">
@@ -17,12 +19,23 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
+
         <p className="font-accent text-base uppercase tracking-[0.18em] text-burntOrange sm:text-xl">
           WOOD FIRE. SMOKED. UNFORGETTABLE.
         </p>
-        <h1 className="mt-4 font-heading text-6xl uppercase leading-none text-whiteSmoke sm:text-8xl md:text-9xl">
-          THE GRIPIZ
-        </h1>
+
+        {/* Logo */}
+        <div className="mt-6">
+          <Image
+            src="/images/logo/logo-transparant.png"
+            alt="The Gripiz"
+            width={800}
+            height={400}
+            priority
+            className="mx-auto w-[280px] sm:w-[380px] md:w-[520px] lg:w-[640px]"
+          />
+        </div>
+
         <p className="mx-auto mt-6 max-w-2xl font-body text-xl text-whiteSmoke/90 sm:text-2xl">
           Real Fire. Real Smoke. Real Flavor.
         </p>
@@ -35,6 +48,7 @@ export default function Hero() {
             Visit Us
           </a>
         </div>
+
       </div>
     </section>
   );
