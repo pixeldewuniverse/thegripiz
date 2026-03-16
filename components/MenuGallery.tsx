@@ -31,7 +31,9 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
   }, [activeCategory, categories]);
 
   const filteredImages =
-    activeCategory === 'all' ? images : images.filter((img) => img.category === activeCategory);
+    activeCategory === 'all'
+      ? images
+      : images.filter((img) => img.category === activeCategory);
 
   const renderButton = (label: string, value: string) => {
     const isActive = activeCategory === value;
@@ -66,14 +68,14 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
         {categories.map((category) => renderButton(categoryLabels[category], category))}
       </div>
 
-      <div className="w-full columns-2 gap-4 md:columns-3 lg:columns-4" data-testid="menu-gallery">
+      <div className="w-full columns-2 gap-4 md:columns-3 lg:columns-4">
         {filteredImages.map((image) => (
           <article
             key={image.src}
-            className="group mb-4 break-inside-avoid overflow-hidden rounded-2xl shadow-[0_12px_28px_rgba(0,0,0,0.45)]"
+            className="group mb-4 break-inside-avoid overflow-hidden rounded-2xl"
           >
             <Image
-              src={toPublicImagePath(image.src)}
+              src={image.src}
               alt="menu item"
               width={600}
               height={600}
