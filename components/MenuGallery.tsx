@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useMemo, useState } from 'react';
 
 type MenuImage = {
@@ -15,12 +16,15 @@ type MenuGalleryProps = {
 };
 
 export default function MenuGallery({ categories, images, categoryLabels }: MenuGalleryProps) {
-  const [activeCategory, setActiveCategory] = useState('all');
+  const [activeCategory, setActiveCategory] = useState<string>('all');
 
- const filteredImages =
-  activeCategory === 'all'
-    ? images
-    : images.filter((img) => img.category === activeCategory);
+  const filteredImages = useMemo(() => {
+    if (activeCategory === 'all') {
+      return images;
+    }
+
+    return images.filter((image) => image.category === activeCategory);
+  }, [activeCategory, images]);
 
   return (
     <div className="mt-14">
@@ -62,11 +66,14 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
             key={image.src}
             className="group mb-4 break-inside-avoid overflow-hidden rounded-2xl shadow-[0_12px_28px_rgba(0,0,0,0.45)]"
           >
-            <img
+            <Image
               src={image.src}
               alt={image.alt}
+              width={600}
+              height={600}
               loading="lazy"
-              className="h-auto w-full rounded-2xl transition duration-500 ease-out group-hover:scale-105"
+              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
+              className="h-auto w-full rounded-2xl object-cover transition duration-500 ease-out group-hover:scale-105"
             />
           </article>
         ))}
