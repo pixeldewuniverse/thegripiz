@@ -15,7 +15,7 @@ type MenuGalleryProps = {
 };
 
 export default function MenuGallery({ categories, images, categoryLabels }: MenuGalleryProps) {
-  const [activeCategory, setActiveCategory] = useState<string>('all');
+  const [activeCategory, setActiveCategory] = useState('all');
 
   const filteredImages = useMemo(() => {
     if (activeCategory === 'all') {
