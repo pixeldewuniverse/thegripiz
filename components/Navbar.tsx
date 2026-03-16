@@ -7,7 +7,7 @@ export default function Navbar() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
        <a href="#home" className="flex items-center">
         <Image
-          src="/images/logo/logo_primary.jpg"
+          src="/images/logo/logo-transparant.png"
           alt="The Gripiz"
           width={140}
           height={60}
