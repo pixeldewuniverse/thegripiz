@@ -42,7 +42,11 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
         type="button"
         onClick={() => setActiveCategory(value)}
         aria-pressed={isActive}
+<<<<<<< codex/fix-font-loading-and-menu-images-2parhp
+        className={`font-body px-5 py-2 rounded-full border text-sm font-medium uppercase tracking-wide transition-all duration-300
+=======
         className={`px-5 py-2 rounded-full border text-sm font-medium uppercase tracking-wide transition-all duration-300
+>>>>>>> main
       ${
         isActive
           ? 'bg-burntOrange text-white border-burntOrange shadow-lg'
@@ -56,7 +60,11 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
 
   return (
     <div className="mt-12">
+<<<<<<< codex/fix-font-loading-and-menu-images-2parhp
+      <h3 className="font-heading text-2xl uppercase tracking-wide text-burntOrange">Menu Category Filter</h3>
+=======
       <h3 className="font-accent text-2xl uppercase tracking-wide text-burntOrange">Menu Category Filter</h3>
+>>>>>>> main
       <div
         className="mt-6 mb-10 flex flex-wrap items-center justify-center gap-3 overflow-x-auto pb-2"
         data-testid="menu-category-filter"

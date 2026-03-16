@@ -1,5 +1,9 @@
 import type { Metadata } from 'next';
+<<<<<<< codex/fix-font-loading-and-menu-images-2parhp
+import { leagueGothic, lexendDeca } from '@/lib/fonts';
+=======
 import { holiday, leagueGothic, lexendDeca } from '@/lib/fonts';
+>>>>>>> main
 import './globals.css';
 
 export const metadata: Metadata = {
@@ -15,7 +19,11 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+<<<<<<< codex/fix-font-loading-and-menu-images-2parhp
+      <body className={`${leagueGothic.variable} ${lexendDeca.variable} bg-charcoal font-body`}>
+=======
       <body className={`${holiday.variable} ${leagueGothic.variable} ${lexendDeca.variable} bg-charcoal font-body`}>
+>>>>>>> main
         {children}
       </body>
     </html>
