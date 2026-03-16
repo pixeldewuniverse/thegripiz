@@ -27,12 +27,12 @@ export default function Hero() {
         {/* Logo */}
         <div className="mt-6">
           <Image
-            src="/images/logo/logo-transparant.png"
+            src="/images/logo/logo_primary.jpg"
             alt="The Gripiz"
-            width={800}
-            height={400}
+            width={500}
+            height={250}
             priority
-            className="mx-auto w-[280px] sm:w-[380px] md:w-[520px] lg:w-[640px]"
+             className="mx-auto w-[200px] sm:w-[260px] md:w-[320px] lg:w-[380px]"
           />
         </div>
 
