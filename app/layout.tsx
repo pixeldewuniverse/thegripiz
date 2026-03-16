@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { League_Gothic, Saira_Condensed, Lexend_Deca } from 'next/font/google';
+import { League_Gothic, Lexend_Deca, Saira_Condensed } from 'next/font/google';
 import './globals.css';
 
 const heading = League_Gothic({
@@ -8,16 +8,16 @@ const heading = League_Gothic({
   weight: '400'
 });
 
-const subheading = Saira_Condensed({
-  subsets: ['latin'],
-  variable: '--font-subheading',
-  weight: ['400', '500', '600']
-});
-
 const body = Lexend_Deca({
   subsets: ['latin'],
   variable: '--font-body',
   weight: ['300', '400', '500']
+});
+
+const accent = Saira_Condensed({
+  subsets: ['latin'],
+  variable: '--font-accent',
+  weight: ['400', '500', '600']
 });
 
 export const metadata: Metadata = {
@@ -33,9 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${heading.variable} ${subheading.variable} ${body.variable} bg-charcoal`}>
-        {children}
-      </body>
+      <body className={`${heading.variable} ${body.variable} ${accent.variable} bg-charcoal font-body`}>{children}</body>
     </html>
   );
 }

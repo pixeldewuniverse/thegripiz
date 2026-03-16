@@ -7,7 +7,7 @@ export default function FromFire() {
         <Image src="/images/brisket.svg" alt="Smoked brisket" fill className="object-cover" />
       </div>
       <div>
-        <p className="font-subheading text-lg uppercase tracking-[0.2em] text-burntOrange">Showcase</p>
+        <p className="font-accent text-lg uppercase tracking-[0.2em] text-burntOrange">Showcase</p>
         <h2 className="mt-3 font-heading text-6xl uppercase">From The Fire</h2>
         <p className="mt-5 max-w-xl text-lg text-whiteSmoke/85">
           Slow cooked BBQ with authentic smoky flavor. Each cut is grilled with precision and served with premium casual smokehouse vibes.

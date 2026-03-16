@@ -12,11 +12,11 @@ export default function MenuList() {
           <article key={item.name} className="card-fire">
             <div className="flex items-start justify-between gap-4">
               <div>
-                <p className="font-subheading text-sm uppercase tracking-[0.2em] text-burntOrange">{item.category}</p>
-                <h3 className="font-subheading text-3xl">{item.name}</h3>
+                <p className="font-accent text-sm uppercase tracking-[0.2em] text-burntOrange">{item.category}</p>
+                <h3 className="font-accent text-3xl">{item.name}</h3>
                 <p className="mt-2 text-whiteSmoke/75">{item.description}</p>
               </div>
-              <p className="font-subheading text-2xl text-whiteSmoke">{item.price}</p>
+              <p className="font-accent text-2xl text-whiteSmoke">{item.price}</p>
             </div>
           </article>
         ))}

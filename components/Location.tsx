@@ -13,7 +13,7 @@ export default function Location() {
         <h2 className="font-heading text-6xl uppercase">Location</h2>
         <p className="mt-4 text-lg">The Gripiz</p>
         <p className="text-whiteSmoke/80">Badung, Bali</p>
-        <p className="mt-6 font-subheading text-xl uppercase text-burntOrange">Opening Hours</p>
+        <p className="mt-6 font-accent text-xl uppercase text-burntOrange">Opening Hours</p>
         <p>10:00 – 22:00</p>
         <div className="mt-8 flex flex-wrap gap-4">
           <a className="btn-primary" href="https://maps.google.com/?q=Badung,+Bali" target="_blank">

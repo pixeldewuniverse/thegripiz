@@ -16,7 +16,7 @@ export default function About() {
       </div>
 
       <div>
-        <p className="font-subheading text-lg uppercase tracking-[0.2em] text-burntOrange">About Us</p>
+        <p className="font-accent text-lg uppercase tracking-[0.2em] text-burntOrange">About Us</p>
         <h2 className="mt-3 font-heading text-6xl uppercase">Our Story</h2>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-whiteSmoke/85">
           The Gripiz was born from a passion for smoked grill and pizza. Our founders explored restaurants across Bali and were inspired to create a place where people can enjoy authentic smoked grill, pizza, and good company in a warm, comfortable dining atmosphere.
@@ -26,7 +26,7 @@ export default function About() {
           {highlights.map((word) => (
             <span
               key={word}
-              className="rounded-full border border-burntOrange/60 bg-burntOrange/10 px-4 py-1 font-subheading text-sm uppercase tracking-[0.12em] text-burntOrange"
+              className="rounded-full border border-burntOrange/60 bg-burntOrange/10 px-4 py-1 font-accent text-sm uppercase tracking-[0.12em] text-burntOrange"
             >
               {word}
             </span>
