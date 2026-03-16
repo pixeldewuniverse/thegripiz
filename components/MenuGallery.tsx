@@ -34,7 +34,30 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
   }, [activeCategory, categories]);
 
   const filteredImages =
-    activeCategory === 'all' ? images : images.filter((img) => img.category === activeCategory);
+    activeCategory === 'all'
+      ? images
+      : images.filter((img) => img.category === activeCategory);
+
+  const renderButton = (label: string, value: string) => {
+    const isActive = activeCategory === value;
+
+    return (
+      <button
+        key={value}
+        type="button"
+        onClick={() => setActiveCategory(value)}
+        aria-pressed={isActive}
+        className={`font-body px-5 py-2 rounded-full border text-sm font-medium uppercase tracking-wide transition-all duration-300
+      ${
+        isActive
+          ? 'bg-burntOrange text-white border-burntOrange shadow-lg'
+          : 'bg-charcoal/80 text-whiteSmoke border-whiteSmoke/20 hover:border-burntOrange hover:text-burntOrange hover:bg-charcoal'
+      }`}
+      >
+        {label}
+      </button>
+    );
+  };
 
   const visibleImages =
     activeCategory === 'all' ? filteredImages.slice(0, visibleCount) : filteredImages;
@@ -79,7 +102,7 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
         {visibleImages.map((image) => (
           <article
             key={image.src}
-            className="group mb-4 break-inside-avoid overflow-hidden rounded-2xl shadow-[0_12px_28px_rgba(0,0,0,0.45)]"
+            className="group mb-4 break-inside-avoid overflow-hidden rounded-2xl"
           >
             <button type="button" onClick={() => setSelectedImage(image)} className="w-full text-left">
               <Image
