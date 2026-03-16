@@ -5,17 +5,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-<<<<<<< codex/fix-font-loading-and-menu-images-2parhp
         heading: ['var(--font-heading)', 'sans-serif'],
         body: ['var(--font-body)', 'sans-serif'],
         accent: ['var(--font-body)', 'sans-serif'],
         subheading: ['var(--font-body)', 'sans-serif']
-=======
-        heading: ['var(--font-league)', 'sans-serif'],
-        body: ['var(--font-lexend)', 'sans-serif'],
-        accent: ['var(--font-holiday)', 'sans-serif'],
-        subheading: ['var(--font-holiday)', 'sans-serif']
->>>>>>> main
       },
       colors: {
         fireRed: '#C85048',
