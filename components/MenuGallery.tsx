@@ -5,7 +5,6 @@ import { useMemo, useState } from 'react';
 
 type MenuImage = {
   src: string;
-  alt: string;
   category: string;
 };
 
@@ -27,7 +26,7 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
   }, [activeCategory, images]);
 
   return (
-    <div className="mt-14">
+    <div className="mt-12">
       <h3 className="font-accent text-2xl uppercase tracking-wide text-burntOrange">Menu Category Filter</h3>
       <div className="mb-8 mt-4 flex flex-wrap gap-3" data-testid="menu-category-filter">
         <button
@@ -59,7 +58,6 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
         ))}
       </div>
 
-      <h3 className="mb-4 font-accent text-2xl uppercase tracking-wide text-burntOrange">Menu Gallery</h3>
       <div className="columns-2 gap-4 md:columns-3 lg:columns-4" data-testid="menu-gallery">
         {filteredImages.map((image) => (
           <article
@@ -68,12 +66,12 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
           >
             <Image
               src={image.src}
-              alt={image.alt}
+              alt={`${categoryLabels[image.category]} menu item`}
               width={600}
               height={600}
               loading="lazy"
-              sizes="(max-width: 768px) 50vw, (max-width: 1200px) 33vw, 25vw"
-              className="h-auto w-full rounded-2xl object-cover transition duration-500 ease-out group-hover:scale-105"
+              sizes="(max-width:768px)50vw,(max-width:1200px)33vw,25vw"
+              className="h-auto w-full rounded-2xl object-cover transition duration-500 group-hover:scale-105"
             />
           </article>
         ))}
