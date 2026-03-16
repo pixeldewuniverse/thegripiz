@@ -25,10 +25,6 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
   useEffect(() => {
-    console.log('Menu images:', images);
-  }, [images]);
-
-  useEffect(() => {
     if (activeCategory !== 'all' && !categories.includes(activeCategory)) {
       setActiveCategory('all');
     }
@@ -37,37 +33,37 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
   const filteredImages =
     activeCategory === 'all' ? images : images.filter((img) => img.category === activeCategory);
 
+  const renderButton = (label: string, value: string) => {
+    const isActive = activeCategory === value;
+
+    return (
+      <button
+        key={value}
+        type="button"
+        onClick={() => setActiveCategory(value)}
+        aria-pressed={isActive}
+        className={`font-body px-5 py-2 rounded-full border text-sm font-medium uppercase tracking-wide transition-all duration-300
+      ${
+        isActive
+          ? 'bg-burntOrange text-white border-burntOrange shadow-lg'
+          : 'bg-charcoal/80 text-whiteSmoke border-whiteSmoke/20 hover:border-burntOrange hover:text-burntOrange hover:bg-charcoal'
+      }`}
+      >
+        {label}
+      </button>
+    );
+  };
+
   return (
     <div className="mt-12">
-      <h3 className="font-accent text-2xl uppercase tracking-wide text-burntOrange">Menu Category Filter</h3>
-      <div className="mb-8 mt-4 flex flex-wrap gap-3" data-testid="menu-category-filter">
-        <button
-          type="button"
-          onClick={() => setActiveCategory('all')}
-          aria-pressed={activeCategory === 'all'}
-          className={`rounded-full border px-4 py-2 font-body text-sm uppercase tracking-wide transition ${
-            activeCategory === 'all'
-              ? 'border-burntOrange bg-burntOrange/20 text-burntOrange'
-              : 'border-whiteSmoke/20 bg-charcoal/80 text-whiteSmoke/80 hover:border-burntOrange/70 hover:text-burntOrange'
-          }`}
-        >
-          All
-        </button>
-        {categories.map((category) => (
-          <button
-            key={category}
-            type="button"
-            onClick={() => setActiveCategory(category)}
-            aria-pressed={activeCategory === category}
-            className={`rounded-full border px-4 py-2 font-body text-sm uppercase tracking-wide transition ${
-              activeCategory === category
-                ? 'border-burntOrange bg-burntOrange/20 text-burntOrange'
-                : 'border-whiteSmoke/20 bg-charcoal/80 text-whiteSmoke/80 hover:border-burntOrange/70 hover:text-burntOrange'
-            }`}
-          >
-            {categoryLabels[category]}
-          </button>
-        ))}
+      <h3 className="font-heading text-2xl uppercase tracking-wide text-burntOrange">Menu Category Filter</h3>
+      <div
+        className="mt-6 mb-10 flex flex-wrap items-center justify-center gap-3 overflow-x-auto pb-2"
+        data-testid="menu-category-filter"
+      >
+        {renderButton('All', 'all')}
+
+        {categories.map((category) => renderButton(categoryLabels[category], category))}
       </div>
 
       <div className="w-full columns-2 gap-4 md:columns-3 lg:columns-4" data-testid="menu-gallery">
@@ -82,8 +78,8 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
               width={600}
               height={600}
               loading="lazy"
-              sizes="(max-width:768px)50vw,(max-width:1200px)33vw,25vw"
-              className="w-full h-auto object-cover transition hover:scale-105"
+              sizes="(max-width:768px) 100vw, 33vw"
+              className="h-auto w-full object-cover transition-transform duration-500 hover:scale-105"
             />
           </article>
         ))}
