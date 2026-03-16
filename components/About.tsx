@@ -19,7 +19,16 @@ export default function About() {
         <p className="font-accent text-lg uppercase tracking-[0.2em] text-burntOrange">About Us</p>
         <h2 className="mt-3 font-heading text-6xl uppercase">Our Story</h2>
         <p className="mt-6 max-w-xl text-lg leading-relaxed text-whiteSmoke/85">
-          The Gripiz was born from a passion for smoked grill and pizza. Our founders explored restaurants across Bali and were inspired to create a place where people can enjoy authentic smoked grill, pizza, and good company in a warm, comfortable dining atmosphere.
+          The Gripiz is an Italian-inspired dining experience where artisan pizza meets bold smoked grill.
+Located in the heart of Bali, we combine authentic Italian flavors with the rich aroma of real wood fire.
+
+Our pizzas are crafted from handmade dough and premium ingredients, while our grilled selections are cooked in a Jasper oven, a world class charcoal oven that blends traditional wood fire cooking with modern precision.
+
+The result is simple: perfectly soft and chewy pizzas, tender juicy meats, and deep smoky flavors in every bite.
+
+More than just a restaurant, The Gripiz is a place to slow down, share good food, and enjoy the vibrant spirit of Bali.
+ 
+Wherever your Bali journey takes you, make sure it leads you to The Gripiz.
         </p>
 
         <div className="mt-8 flex flex-wrap gap-3">
