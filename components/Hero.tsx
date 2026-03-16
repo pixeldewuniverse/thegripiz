@@ -18,7 +18,7 @@ export default function Hero() {
 
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
         <p className="font-accent text-base uppercase tracking-[0.18em] text-burntOrange sm:text-xl">
-          Smoked Grill • Pizza • Sandwich
+          WOOD FIRE. SMOKED. UNFORGETTABLE.
         </p>
         <h1 className="mt-4 font-heading text-6xl uppercase leading-none text-whiteSmoke sm:text-8xl md:text-9xl">
           THE GRIPIZ
