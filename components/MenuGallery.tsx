@@ -24,15 +24,6 @@ const toPublicImagePath = (src: string) => {
 export default function MenuGallery({ categories, images, categoryLabels }: MenuGalleryProps) {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
-  useEffect(() => {
-    if (activeCategory !== 'all' && !categories.includes(activeCategory)) {
-      setActiveCategory('all');
-    }
-  }, [activeCategory, categories]);
-
-  const filteredImages =
-    activeCategory === 'all' ? images : images.filter((img) => img.category === activeCategory);
-
   const renderButton = (label: string, value: string) => {
     const isActive = activeCategory === value;
 
@@ -42,52 +33,46 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
         type="button"
         onClick={() => setActiveCategory(value)}
         aria-pressed={isActive}
-<<<<<<< codex/fix-font-loading-and-menu-images-2parhp
-        className={`font-body px-5 py-2 rounded-full border text-sm font-medium uppercase tracking-wide transition-all duration-300
-=======
         className={`px-5 py-2 rounded-full border text-sm font-medium uppercase tracking-wide transition-all duration-300
->>>>>>> main
-      ${
-        isActive
-          ? 'bg-burntOrange text-white border-burntOrange shadow-lg'
-          : 'bg-charcoal/80 text-whiteSmoke border-whiteSmoke/20 hover:border-burntOrange hover:text-burntOrange hover:bg-charcoal'
-      }`}
+        ${
+          isActive
+            ? 'bg-burntOrange text-white border-burntOrange shadow-lg'
+            : 'bg-charcoal/80 text-whiteSmoke border-whiteSmoke/20 hover:border-burntOrange hover:text-burntOrange hover:bg-charcoal'
+        }`}
       >
         {label}
       </button>
     );
   };
 
+  const filteredImages =
+    activeCategory === 'all'
+      ? images
+      : images.filter((img) => img.category === activeCategory);
+
   return (
     <div className="mt-12">
-<<<<<<< codex/fix-font-loading-and-menu-images-2parhp
-      <h3 className="font-heading text-2xl uppercase tracking-wide text-burntOrange">Menu Category Filter</h3>
-=======
-      <h3 className="font-accent text-2xl uppercase tracking-wide text-burntOrange">Menu Category Filter</h3>
->>>>>>> main
-      <div
-        className="mt-6 mb-10 flex flex-wrap items-center justify-center gap-3 overflow-x-auto pb-2"
-        data-testid="menu-category-filter"
-      >
+      <div className="mt-6 mb-10 flex flex-wrap items-center justify-center gap-3">
         {renderButton('All', 'all')}
 
-        {categories.map((category) => renderButton(categoryLabels[category], category))}
+        {categories.map((category) =>
+          renderButton(categoryLabels[category], category)
+        )}
       </div>
 
-      <div className="w-full columns-2 gap-4 md:columns-3 lg:columns-4" data-testid="menu-gallery">
+      <div className="w-full columns-2 gap-4 md:columns-3 lg:columns-4">
         {filteredImages.map((image) => (
           <article
             key={image.src}
-            className="group mb-4 break-inside-avoid overflow-hidden rounded-2xl shadow-[0_12px_28px_rgba(0,0,0,0.45)]"
+            className="group mb-4 break-inside-avoid overflow-hidden rounded-2xl"
           >
             <Image
-              src={toPublicImagePath(image.src)}
+              src={image.src}
               alt="menu item"
               width={600}
               height={600}
               loading="lazy"
-              sizes="(max-width:768px) 100vw, 33vw"
-              className="h-auto w-full object-cover transition-transform duration-500 hover:scale-105"
+              className="h-auto w-full object-cover"
             />
           </article>
         ))}
