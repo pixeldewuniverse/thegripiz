@@ -9,7 +9,7 @@ export default function Navbar() {
 
         <a href="#home" className="flex items-center">
           <Image
-            src="/images/logo/logo_primary.jpg"
+            src="/images/logo/logo-transparant.png"
             alt="The Gripiz"
             width={220}
             height={100}
