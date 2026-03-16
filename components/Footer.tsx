@@ -10,7 +10,7 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="font-accent text-2xl uppercase text-burntOrange">Motto</h4>
-          <p className="mt-2 text-whiteSmoke/75">“Good service and good food never go out of business.”</p>
+          <p className="mt-2 text-whiteSmoke/75">“WOOD FIRE. SMOKED. UNFORGETTABLE.”</p>
         </div>
         <div>
           <h4 className="font-accent text-2xl uppercase text-burntOrange">Follow Us</h4>
