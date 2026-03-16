@@ -20,8 +20,8 @@ export default function MenuCard({ item }: MenuCardProps) {
       </div>
       <div className="space-y-3 p-5">
         <div className="flex items-start justify-between gap-4">
-          <h3 className="font-subheading text-2xl text-whiteSmoke">{item.name}</h3>
-          <p className="whitespace-nowrap font-subheading text-xl text-burntOrange">{item.price}</p>
+          <h3 className="font-accent text-2xl text-whiteSmoke">{item.name}</h3>
+          <p className="whitespace-nowrap font-accent text-xl text-burntOrange">{item.price}</p>
         </div>
         <p className="text-sm leading-relaxed text-whiteSmoke/80">{item.description}</p>
       </div>

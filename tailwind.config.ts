@@ -6,8 +6,9 @@ const config: Config = {
     extend: {
       fontFamily: {
         heading: ['var(--font-heading)', 'sans-serif'],
-        subheading: ['var(--font-subheading)', 'sans-serif'],
-        body: ['var(--font-body)', 'sans-serif']
+        body: ['var(--font-body)', 'sans-serif'],
+        accent: ['var(--font-accent)', 'sans-serif'],
+        subheading: ['var(--font-accent)', 'sans-serif']
       },
       colors: {
         fireRed: '#C85048',

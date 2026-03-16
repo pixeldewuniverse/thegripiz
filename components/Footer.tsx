@@ -9,11 +9,11 @@ export default function Footer() {
           </p>
         </div>
         <div>
-          <h4 className="font-subheading text-2xl uppercase text-burntOrange">Motto</h4>
+          <h4 className="font-accent text-2xl uppercase text-burntOrange">Motto</h4>
           <p className="mt-2 text-whiteSmoke/75">“Good service and good food never go out of business.”</p>
         </div>
         <div>
-          <h4 className="font-subheading text-2xl uppercase text-burntOrange">Follow Us</h4>
+          <h4 className="font-accent text-2xl uppercase text-burntOrange">Follow Us</h4>
           <ul className="mt-3 space-y-2 text-whiteSmoke/80">
             <li>Instagram</li>
             <li>TikTok</li>

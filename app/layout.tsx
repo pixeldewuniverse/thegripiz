@@ -1,5 +1,24 @@
 import type { Metadata } from 'next';
+import { League_Gothic, Lexend_Deca, Saira_Condensed } from 'next/font/google';
 import './globals.css';
+
+const heading = League_Gothic({
+  subsets: ['latin'],
+  variable: '--font-heading',
+  weight: '400'
+});
+
+const body = Lexend_Deca({
+  subsets: ['latin'],
+  variable: '--font-body',
+  weight: ['300', '400', '500']
+});
+
+const accent = Saira_Condensed({
+  subsets: ['latin'],
+  variable: '--font-accent',
+  weight: ['400', '500', '600']
+});
 
 export const metadata: Metadata = {
   title: 'The Gripiz | Smoked Grill, Pizza, Sandwich',
@@ -14,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="bg-charcoal">{children}</body>
+      <body className={`${heading.variable} ${body.variable} ${accent.variable} bg-charcoal font-body`}>{children}</body>
     </html>
   );
 }

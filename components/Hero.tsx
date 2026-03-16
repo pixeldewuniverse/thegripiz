@@ -17,13 +17,13 @@ export default function Hero() {
       <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative z-10 mx-auto flex max-w-4xl flex-col items-center px-6 text-center">
-        <p className="font-subheading text-base uppercase tracking-[0.18em] text-burntOrange sm:text-xl">
+        <p className="font-accent text-base uppercase tracking-[0.18em] text-burntOrange sm:text-xl">
           Smoked Grill • Pizza • Sandwich
         </p>
         <h1 className="mt-4 font-heading text-6xl uppercase leading-none text-whiteSmoke sm:text-8xl md:text-9xl">
           THE GRIPIZ
         </h1>
-        <p className="mx-auto mt-6 max-w-2xl font-subheading text-xl text-whiteSmoke/90 sm:text-2xl">
+        <p className="mx-auto mt-6 max-w-2xl font-body text-xl text-whiteSmoke/90 sm:text-2xl">
           Real Fire. Real Smoke. Real Flavor.
         </p>
 

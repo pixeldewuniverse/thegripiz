@@ -17,6 +17,9 @@ export default function Home() {
       <FadeInSection>
         <About />
       </FadeInSection>
+      <FadeInSection>
+        <FromFire />
+      </FadeInSection>
       <FadeInSection id="menu">
         <SignatureMenu />
       </FadeInSection>

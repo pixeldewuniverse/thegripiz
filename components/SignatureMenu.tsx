@@ -33,7 +33,7 @@ export default function SignatureMenu() {
   return (
     <section className="mx-auto max-w-7xl px-6 py-20">
       <h2 className="font-heading text-5xl uppercase text-whiteSmoke md:text-6xl">Signature Menu</h2>
-      <p className="mt-2 font-subheading text-xl text-whiteSmoke/75">
+      <p className="mt-2 font-body text-xl text-whiteSmoke/75">
         Dark, fire-kissed, and smoke-infused creations made for a premium dining experience.
       </p>
 
@@ -55,7 +55,7 @@ export default function SignatureMenu() {
             </div>
 
             <div className="space-y-3 p-5">
-              <h3 className="font-subheading text-2xl leading-tight text-burntOrange">{item.name}</h3>
+              <h3 className="font-accent text-2xl leading-tight text-burntOrange">{item.name}</h3>
               <p className="text-sm leading-relaxed text-whiteSmoke/80">{item.description}</p>
             </div>
           </article>

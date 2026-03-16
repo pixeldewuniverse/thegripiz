@@ -34,11 +34,11 @@ body {
 
 @layer components {
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-fireRed px-6 py-3 font-medium text-whiteSmoke transition duration-300 hover:bg-burntOrange hover:shadow-fire;
+    @apply inline-flex items-center justify-center rounded-full bg-fireRed px-6 py-3 font-accent font-medium text-whiteSmoke transition duration-300 hover:bg-burntOrange hover:shadow-fire;
   }
 
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-fireRed px-6 py-3 font-medium text-whiteSmoke transition duration-300 hover:bg-fireRed/20 hover:shadow-fire;
+    @apply inline-flex items-center justify-center rounded-full border border-fireRed px-6 py-3 font-accent font-medium text-whiteSmoke transition duration-300 hover:bg-fireRed/20 hover:shadow-fire;
   }
 
   .card-fire {
