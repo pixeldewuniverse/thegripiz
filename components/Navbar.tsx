@@ -4,7 +4,7 @@ const navItems = ['Home', 'Menu', 'Location', 'Contact'];
 
 export default function Navbar() {
   return (
-    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-charcoal/70 backdrop-blur">
+    <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-transparent backdrop-blur-md">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-6">
 
         <a href="#home" className="flex items-center">
@@ -23,7 +23,7 @@ export default function Navbar() {
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
-              className="font-accent text-lg uppercase tracking-wide text-whiteSmoke/85 transition hover:text-burntOrange"
+              className="font-accent text-lg uppercase tracking-wide text-whiteSmoke transition hover:text-burntOrange"
             >
               {item}
             </a>
