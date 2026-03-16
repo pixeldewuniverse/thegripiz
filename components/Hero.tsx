@@ -27,7 +27,7 @@ export default function Hero() {
         {/* Logo */}
         <div className="mt-6">
           <Image
-            src="/images/logo/logo_primary.jpg"
+            src="/images/logo/logo-transparant.png"
             alt="The Gripiz"
             width={500}
             height={250}
