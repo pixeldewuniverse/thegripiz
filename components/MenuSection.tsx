@@ -1,23 +1,58 @@
-import MenuCard from '@/components/MenuCard';
-import { menuItems } from '@/data/menu';
+import fs from 'node:fs';
+import path from 'node:path';
+import MenuGallery from '@/components/MenuGallery';
+
+type MenuImage = {
+  src: string;
+  category: string;
+};
+
+const menuRoot = path.join(process.cwd(), 'public', 'images', 'menu');
+
+const getCategoryLabel = (category: string) => {
+  const customLabels: Record<string, string> = {
+    'burger-buns': 'Burger & Buns'
+  };
+
+  if (customLabels[category]) {
+    return customLabels[category];
+  }
+
+  return category
+    .split('-')
+    .map((part) => `${part.charAt(0).toUpperCase()}${part.slice(1)}`)
+    .join(' ');
+};
+
+const categories = fs
+  .readdirSync(menuRoot, { withFileTypes: true })
+  .filter((entry) => entry.isDirectory())
+  .map((entry) => entry.name)
+  .sort((a, b) => a.localeCompare(b));
+
+const categoryLabels = Object.fromEntries(categories.map((category) => [category, getCategoryLabel(category)]));
+
+const menuImages: MenuImage[] = categories.flatMap((category) => {
+  const categoryPath = path.join(menuRoot, category);
+
+  return fs
+    .readdirSync(categoryPath, { withFileTypes: true })
+    .filter((file) => file.isFile() && /\.(jpg|jpeg|png|webp)$/i.test(file.name))
+    .map((file) => ({
+      src: `/images/menu/${category}/${file.name}`,
+      category
+    }));
+});
 
 export default function MenuSection() {
   return (
-    <section id="menu-list" className="mx-auto max-w-7xl px-6 py-20">
-      <div className="mb-10 max-w-3xl">
-        <p className="font-accent text-sm uppercase tracking-[0.25em] text-burntOrange">Dark • Fire • Smoke</p>
-        <h2 className="mt-3 font-heading text-5xl uppercase text-whiteSmoke md:text-6xl">Premium BBQ Menu</h2>
-        <p className="mt-4 text-lg text-whiteSmoke/75">
-          Crafted with slow smoke, wood fire, and bold character. Discover our signature plates for a true premium
-          BBQ experience.
-        </p>
-      </div>
+    <section className="mx-auto max-w-7xl px-6 py-20">
+      <h2 className="font-heading text-5xl uppercase text-whiteSmoke md:text-6xl">Menu Gallery</h2>
+      <p className="mt-2 font-body text-xl text-whiteSmoke/75">
+        Browse our fire-kissed menu by category in a clean masonry gallery designed for fast mobile loading.
+      </p>
 
-      <div className="grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
-        {menuItems.map((item) => (
-          <MenuCard key={item.name} item={item} />
-        ))}
-      </div>
+      <MenuGallery categories={categories} images={menuImages} categoryLabels={categoryLabels} />
     </section>
   );
 }
