@@ -5,10 +5,10 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        heading: ['var(--font-heading)', 'sans-serif'],
-        body: ['var(--font-body)', 'sans-serif'],
-        accent: ['var(--font-accent)', 'sans-serif'],
-        subheading: ['var(--font-accent)', 'sans-serif']
+        heading: ['var(--font-league)', 'sans-serif'],
+        body: ['var(--font-lexend)', 'sans-serif'],
+        accent: ['var(--font-holiday)', 'sans-serif'],
+        subheading: ['var(--font-holiday)', 'sans-serif']
       },
       colors: {
         fireRed: '#C85048',
