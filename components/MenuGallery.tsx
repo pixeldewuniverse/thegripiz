@@ -17,11 +17,10 @@ type MenuGalleryProps = {
 export default function MenuGallery({ categories, images, categoryLabels }: MenuGalleryProps) {
   const [activeCategory, setActiveCategory] = useState('all');
 
-  const filteredImages = useMemo(() => {
-    if (activeCategory === 'all') {
-      return images;
-    }
-
+  const filteredImages =
+  activeCategory === 'all'
+    ? images
+    : images.filter((img) => img.category === activeCategory);
     return images.filter((image) => image.category === activeCategory);
   }, [activeCategory, images]);
 
