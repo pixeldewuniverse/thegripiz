@@ -1,7 +1,7 @@
 'use client';
 
 import Image from 'next/image';
-import { useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 type MenuImage = {
   src: string;
@@ -17,13 +17,18 @@ type MenuGalleryProps = {
 export default function MenuGallery({ categories, images, categoryLabels }: MenuGalleryProps) {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
-  const filteredImages = useMemo(() => {
-    if (activeCategory === 'all') {
-      return images;
-    }
+  useEffect(() => {
+    console.log('Menu images:', images);
+  }, [images]);
 
-    return images.filter((image) => image.category === activeCategory);
-  }, [activeCategory, images]);
+  useEffect(() => {
+    if (activeCategory !== 'all' && !categories.includes(activeCategory)) {
+      setActiveCategory('all');
+    }
+  }, [activeCategory, categories]);
+
+  const filteredImages =
+    activeCategory === 'all' ? images : images.filter((img) => img.category === activeCategory);
 
   return (
     <div className="mt-12">
@@ -58,7 +63,7 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
         ))}
       </div>
 
-      <div className="columns-2 gap-4 md:columns-3 lg:columns-4" data-testid="menu-gallery">
+      <div className="w-full columns-2 gap-4 md:columns-3 lg:columns-4" data-testid="menu-gallery">
         {filteredImages.map((image) => (
           <article
             key={image.src}
@@ -66,12 +71,12 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
           >
             <Image
               src={image.src}
-              alt={`${categoryLabels[image.category]} menu item`}
+              alt="menu item"
               width={600}
               height={600}
               loading="lazy"
               sizes="(max-width:768px)50vw,(max-width:1200px)33vw,25vw"
-              className="h-auto w-full rounded-2xl object-cover transition duration-500 group-hover:scale-105"
+              className="w-full h-auto object-cover transition hover:scale-105"
             />
           </article>
         ))}
