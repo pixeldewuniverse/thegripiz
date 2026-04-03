@@ -3,7 +3,7 @@ export default function Footer() {
     <footer id="contact" className="border-t border-steel bg-black/50">
       <div className="mx-auto grid max-w-7xl gap-8 px-6 py-12 md:grid-cols-3">
         <div>
-          <h3 className="font-heading text-5xl uppercase">The Gripiz</h3>
+          <h3 className="font-heading text-whiteSmoke text-5xl uppercase">The Gripiz</h3>
           <p className="mt-2 text-whiteSmoke/75">
             Premium smokehouse in Bali serving smoked grill, pizza, sandwich, pasta, and crafted drinks.
           </p>

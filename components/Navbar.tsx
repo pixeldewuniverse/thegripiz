@@ -30,7 +30,7 @@ export default function Navbar() {
           ))}
         </nav>
 
-        <a href="#contact" className="btn-primary text-sm md:text-base">
+        <a href="#contact" className="btn-primary text-whiteSmoke text-sm md:text-base">
           Reserve Table
         </a>
 
