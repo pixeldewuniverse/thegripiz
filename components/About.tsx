@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-const highlights = ['Authentic', 'Delicious', 'Timeless'];
+const highlights = ['WOOD', 'FIRE', 'SMOKED'];
 
 export default function About() {
   return (
