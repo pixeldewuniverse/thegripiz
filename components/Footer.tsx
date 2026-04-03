@@ -14,11 +14,24 @@ export default function Footer() {
         </div>
         <div>
           <h4 className="font-accent text-2xl uppercase text-burntOrange">Follow Us</h4>
-          <ul className="mt-3 space-y-2 text-whiteSmoke/80">
-            <li>Instagram</li>
-            <li>TikTok</li>
-            <li>Contact</li>
-          </ul>
+          <div className="mt-6 flex items-center gap-6">
+            <a
+              href="https://www.instagram.com/thegripiz?igsh=d2tuZTJoeG1oa2Zk"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm uppercase tracking-wide text-whiteSmoke/70 transition hover:text-burntOrange"
+            >
+              Instagram
+            </a>
+            <a
+              href="https://www.tiktok.com/@thegripiz?_r=1&_t=ZS-95EwBxrYuIu"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm uppercase tracking-wide text-whiteSmoke/70 transition hover:text-burntOrange"
+            >
+              TikTok
+            </a>
+          </div>
         </div>
       </div>
       <p className="border-t border-steel py-4 text-center text-sm text-whiteSmoke/65">© The Gripiz</p>
