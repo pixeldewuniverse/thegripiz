@@ -7,7 +7,7 @@ export default function About() {
     <section id="story" className="mx-auto grid max-w-7xl gap-10 px-6 py-20 md:grid-cols-2 md:items-center">
       <div className="relative h-80 overflow-hidden rounded-2xl border border-white/10 md:h-[500px]">
         <Image
-          src="/public/outdoor.heic"
+          src="/public/outdoor.jpg"
           alt="The Gripiz smoky grill and restaurant interior"
           fill
           className="object-cover"
