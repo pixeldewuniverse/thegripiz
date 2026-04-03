@@ -5,6 +5,7 @@ import MenuGallery from '@/components/MenuGallery';
 type MenuImage = {
   src: string;
   category: string;
+  name: string;
 };
 
 const menuRoot = path.join(process.cwd(), 'public', 'images', 'menu');
@@ -38,10 +39,16 @@ const menuImages: MenuImage[] = categories.flatMap((category) => {
   return fs
     .readdirSync(categoryPath, { withFileTypes: true })
     .filter((file) => file.isFile() && /\.(jpg|jpeg|png|webp)$/i.test(file.name))
-    .map((file) => ({
-      src: `/images/menu/${category}/${file.name}`,
-      category
-    }));
+    .map((file) => {
+      const rawName = file.name.replace(/\.(jpg|jpeg|png|webp)$/i, '').replace(/[-_]+/g, ' ').trim();
+      const formattedName = rawName.replace(/\b\w/g, (char) => char.toUpperCase());
+
+      return {
+        src: `/images/menu/${category}/${file.name}`,
+        category,
+        name: formattedName
+      };
+    });
 });
 
 export default function MenuSection() {

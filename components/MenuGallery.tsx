@@ -1,11 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { useMemo, useState } from 'react';
+import { useState } from 'react';
 
 type MenuImage = {
   src: string;
   category: string;
+  name: string;
 };
 
 type MenuGalleryProps = {
@@ -17,13 +18,8 @@ type MenuGalleryProps = {
 export default function MenuGallery({ categories, images, categoryLabels }: MenuGalleryProps) {
   const [activeCategory, setActiveCategory] = useState<string>('all');
 
-  const filteredImages = useMemo(() => {
-    if (activeCategory === 'all') {
-      return images;
-    }
-
-    return images.filter((image) => image.category === activeCategory);
-  }, [activeCategory, images]);
+  const filteredImages =
+    activeCategory === 'all' ? images : images.filter((image) => image.category === activeCategory);
 
   return (
     <div className="mt-12">
@@ -60,19 +56,19 @@ export default function MenuGallery({ categories, images, categoryLabels }: Menu
 
       <div className="columns-2 gap-4 md:columns-3 lg:columns-4" data-testid="menu-gallery">
         {filteredImages.map((image) => (
-          <article
-            key={image.src}
-            className="group mb-4 break-inside-avoid overflow-hidden rounded-2xl shadow-[0_12px_28px_rgba(0,0,0,0.45)]"
-          >
-            <Image
-              src={image.src}
-              alt={`${categoryLabels[image.category]} menu item`}
-              width={600}
-              height={600}
-              loading="lazy"
-              sizes="(max-width:768px)50vw,(max-width:1200px)33vw,25vw"
-              className="h-auto w-full rounded-2xl object-cover transition duration-500 group-hover:scale-105"
-            />
+          <article key={image.src} className="mb-4 break-inside-avoid overflow-hidden rounded-2xl">
+            <div className="group overflow-hidden rounded-2xl shadow-[0_12px_28px_rgba(0,0,0,0.45)]">
+              <Image
+                src={image.src}
+                alt={image.name}
+                width={600}
+                height={600}
+                loading="lazy"
+                sizes="(max-width:768px)50vw,(max-width:1200px)33vw,25vw"
+                className="h-auto w-full rounded-2xl object-cover transition duration-500 group-hover:scale-105"
+              />
+            </div>
+            <p className="mt-2 text-center text-sm text-whiteSmoke/80">{image.name}</p>
           </article>
         ))}
       </div>
