@@ -40,10 +40,8 @@ const menuImages: MenuImage[] = categories.flatMap((category) => {
     .readdirSync(categoryPath, { withFileTypes: true })
     .filter((file) => file.isFile() && /\.(jpg|jpeg|png|webp)$/i.test(file.name))
     .map((file) => {
-      const rawName = file.name.replace(/\.(jpg|jpeg|png|webp)$/i, '');
-      const formattedName = rawName
-        .replace(/[-_]/g, ' ')
-        .replace(/\b\w/g, (c) => c.toUpperCase());
+      const rawName = file.name.replace(/\.(jpg|jpeg|png|webp)$/i, '').replace(/[-_]+/g, ' ').trim();
+      const formattedName = rawName.replace(/\b\w/g, (char) => char.toUpperCase());
 
       return {
         src: `/images/menu/${category}/${file.name}`,
