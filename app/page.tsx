@@ -4,7 +4,7 @@ import FromFire from '@/components/FromFire';
 import Hero from '@/components/Hero';
 import Location from '@/components/Location';
 import Navbar from '@/components/Navbar';
-import SignatureMenu from '@/components/SignatureMenu';
+import MenuSection from '@/components/MenuSection';
 import Experience from '@/components/Experience';
 import About from '@/components/About';
 import WhatsAppButton from '@/components/WhatsAppButton';
@@ -21,7 +21,7 @@ export default function Home() {
         <FromFire />
       </FadeInSection>
       <FadeInSection id="menu">
-        <SignatureMenu />
+        <MenuSection />
       </FadeInSection>
       <FadeInSection>
         <Experience />
